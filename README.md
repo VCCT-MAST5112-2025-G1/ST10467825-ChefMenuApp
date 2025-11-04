@@ -21,8 +21,8 @@ The application also allows the chef to add and remove items from the menu swift
 
 ## Goals
 
-Creating a digital menu application that allows a private chef to showcase daily dishes in an organized and user-friendly way. 
-Providing a flexible system where the chef can quickly add, view, and manage menu items for each dining experience. 
+Creating a digital menu application that allows a private chef to showcase daily dishes in an organized and user-friendly way.
+Providing a flexible system where the chef can quickly add, view, and manage menu items for each dining experience.
 Enhancing the customer experience by displaying the menu clearly, including dish details, categories, and pricing.
 
 ## Features
@@ -64,6 +64,10 @@ Enhancing the customer experience by displaying the menu clearly, including dish
 
   Added dynamic item counts per food category and total price calculation for the menu items. Counts and totals update dynamically as menu items are added, providing the chef with a clear overview of the menu and costs. Updated TypeScript configuration to ensure stricter type checking and better type safety across the app.
 
+- Version 1.5
+
+  Added dedicated screens for each job type to improve navigation and user clarity across the app. Each screen now will handle its own layout and logic whilst maintaining consistent styling with the main interface. Refactored the menu function so it can be global, this will come in handy for the chef's side of things later. Carried out minor UI adjustments to ensure consistent behaviour between the new job screens and the main menu
+
 ## Installation and setup
 
 1. Clone this repository:
@@ -86,16 +90,16 @@ Enhancing the customer experience by displaying the menu clearly, including dish
 
    `npx react-native run-iOS`
 
-
 ## References
+
 1. React Native. 2023. React Native Documentation. [online] Available at: https://reactnative.dev/docs/getting-started
- [Accessed 22 October 2025].
+   [Accessed 22 October 2025].
 
 2. TypeScript. 2023. TypeScript Handbook. [online] Available at: https://www.typescriptlang.org/docs/handbook/intro.html
- [Accessed 22 October 2025].
+   [Accessed 22 October 2025].
 
 3. Expo. 2023. Using FlatList in React Native. [online] Available at: https://docs.expo.dev/versions/latest/sdk/flatlist/
- [Accessed 22 October 2025].
+   [Accessed 22 October 2025].
 
 4. React Native Picker. 2023. React Native Picker Documentation. [online] Available at: https://reactnative.dev/docs/picker
- [Accessed 22 October 2025]
+   [Accessed 22 October 2025]

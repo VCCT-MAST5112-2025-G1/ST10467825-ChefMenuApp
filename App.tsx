@@ -10,19 +10,7 @@ import {
   StatusBar,
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
-
-/**Menu Item Type */
-
-type Course = "Starter" | "Main" | "Dessert";
-
-//defining a typescript type for menu items
-type MenuItem = {
-  id: number; //unique id
-  name: string;
-  description: string;
-  course: Course;
-  price: number;
-};
+import { MenuItem, Course } from "./types";
 
 export default function App() {
   //State: array of menu items (empty at start)
@@ -89,14 +77,12 @@ export default function App() {
   ).length;
 
   // Calculate total price of all menu items
-const totalPrice = menuItems.reduce((sum, item) => sum + item.price, 0);
-
+  const totalPrice = menuItems.reduce((sum, item) => sum + item.price, 0);
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <StatusBar barStyle="dark-content" />
       <Text style={styles.title}>Chef's Digital Menu</Text>
-
       {/* menu item form*/}
       <View style={styles.formContainer}>
         <Text style={styles.sectionTitle}>Add a New Menu Item</Text>
@@ -119,7 +105,9 @@ const totalPrice = menuItems.reduce((sum, item) => sum + item.price, 0);
           <Picker
             selectedValue={course}
             onValueChange={(value) => setCourse(value)}
-          > //picker-dropdown for course selection
+          >
+            {" "}
+            //picker-dropdown for course selection
             <Picker.Item label="Select Course" value="" />
             <Picker.Item label="Starter" value="starter" />
             <Picker.Item label="Main" value="main" />
@@ -137,10 +125,8 @@ const totalPrice = menuItems.reduce((sum, item) => sum + item.price, 0);
 
         <Button title="Add Menu Item" onPress={handleAddItem} />
       </View>
-
       {/* Display total items */}
       <Text style={styles.countText}>Total Items: {totalCount}</Text>
-
       {/* Display item counts per category */}
       <View style={styles.countContainer}>
         <Text style={styles.countText}>Starters: {startersCount}</Text>
@@ -148,9 +134,9 @@ const totalPrice = menuItems.reduce((sum, item) => sum + item.price, 0);
         <Text style={styles.countText}>Desserts: {dessertsCount}</Text>
       </View>
       // Display total price
-      <Text style={styles.countText}>Total Price: R {totalPrice.toFixed(2)}</Text>
-
-
+      <Text style={styles.countText}>
+        Total Price: R {totalPrice.toFixed(2)}
+      </Text>
       {/* Menu Items List */}
       <Text style={styles.sectionTitle}>Current Menu</Text>
       {menuItems.length == 0 ? (
