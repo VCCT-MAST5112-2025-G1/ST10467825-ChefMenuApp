@@ -1,6 +1,8 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { menuData } from "./data/menuData";
+import { MenuProvider } from "./MenuContent";
 
 //importing the screens
 import HomeScreen from "./screens/HomeScreen";
@@ -12,13 +14,15 @@ const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Chef" component={ChefScreen} />
-        <Stack.Screen name="Guest" component={GuestScreen} />
-        <Stack.Screen name="Splash" component={SplashScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <MenuProvider>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Chef" component={ChefScreen} />
+          <Stack.Screen name="Guest" component={GuestScreen} />
+          <Stack.Screen name="Splash" component={SplashScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </MenuProvider>
   );
 }

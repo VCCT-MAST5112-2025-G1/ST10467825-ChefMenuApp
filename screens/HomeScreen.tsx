@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import {
   View,
   Text,
@@ -11,11 +11,14 @@ import {
 } from "react-native";
 import { Picker } from "@react-native-picker/picker";
 import { MenuItem, Course } from "../types";
+import MenuList from "../components/MenuList";
+import { MenuContext } from "../MenuContent";
 
 export default function HomeScreen() {
-  //State: array of menu items (empty at start)
-  //state for all menu items
-  const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
+  
+  //menuItems fetched from context
+  const { menuItems, setMenuItems } = useContext(MenuContext);
+
 
   //controlled input states for the form
   const [name, setName] = useState("");
@@ -27,7 +30,7 @@ export default function HomeScreen() {
   const handleAddItem = () => {
     //validation check
     if (!name || !description || !course || !price) {
-      alert!("Please fill in all fields before adding an item");
+      alert("Please fill in all fields before adding an item");
       return;
     }
 
@@ -49,9 +52,6 @@ export default function HomeScreen() {
     };
 
     setMenuItems((prev) => [...prev, newItem]);
-
-    //add item to the list
-    setMenuItems([...menuItems, newItem]);
 
     //clear form
     setName("");
@@ -138,23 +138,10 @@ export default function HomeScreen() {
         Total Price: R {totalPrice.toFixed(2)}
       </Text>
       {/* Menu Items List */}
-      <Text style={styles.sectionTitle}>Current Menu</Text>
-      {menuItems.length == 0 ? (
-        <Text>No menu items added yet. Add some above!</Text>
-      ) : (
-        //list of menu items
-        <FlatList
-          data={menuItems}
-          keyExtractor={(item) => item.id.toString()}
-          renderItem={({ item }) => (
-            <View style={styles.menuItem}>
-              <Text style={styles.menuName}>{item.name}</Text>
-              <Text>{item.description}</Text>
-              <Text style={styles.menuCourse}>{item.course}</Text>
-              <Text style={styles.menuPrice}>R {item.price.toFixed(2)}</Text>
-            </View>
-          )}
-        />
+     {/* Menu Items List */}
+<Text style={styles.sectionTitle}>Current Menu</Text>
+<MenuList items={menuItems} />
+
       )}
     </ScrollView>
   );

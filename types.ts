@@ -10,3 +10,12 @@ export type MenuItem = {
   course: Course;
   price: number;
 };
+
+export type ChefScreenProps = {
+  menuItems: MenuItem[];
+  setMenuItems: React.Dispatch<React.SetStateAction<MenuItem[]>>;
+};
+
+export type HomeScreenProps = {
+  menuItems: MenuItem[];
+};

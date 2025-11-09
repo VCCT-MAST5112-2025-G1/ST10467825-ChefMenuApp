@@ -68,6 +68,10 @@ Enhancing the customer experience by displaying the menu clearly, including dish
 
   Added dedicated screens for each job type to improve navigation and user clarity across the app. Each screen now will handle its own layout and logic whilst maintaining consistent styling with the main interface. Refactored the menu function so it can be global, this will come in handy for the chef's side of things later. Carried out minor UI adjustments to ensure consistent behaviour between the new job screens and the main menu
 
+- Version 1.6
+
+  Refactored the overall structure of the code for imporoved readability and maintainability. Added a centralised `MenuProvider` context to manage menu data globally across screens. Also `HomeScreen` was updated to consume global menu context to prepare the app for the next phase where menu management will move to the dedicated chef screen.
+
 ## Installation and setup
 
 1. Clone this repository:
