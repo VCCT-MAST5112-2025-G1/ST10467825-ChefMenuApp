@@ -1,12 +1,14 @@
 import React from "react";
 import { View, Text, FlatList, StyleSheet } from "react-native";
 import { MenuItem } from "../types";
+import { Button } from "react-native-paper";
 
 type MenuListProps = {
   items: MenuItem[];
+  removeItem: (id: number) => void;
 };
 
-export default function MenuList({ items }: MenuListProps) {
+export default function MenuList({ items, removeItem }: MenuListProps) {
   if (items.length === 0) {
     return <Text>No menu items added yet. Add some above!</Text>;
   }
@@ -21,6 +23,11 @@ export default function MenuList({ items }: MenuListProps) {
           <Text>{item.description}</Text>
           <Text style={styles.menuCourse}>{item.course}</Text>
           <Text style={styles.menuPrice}>R {item.price.toFixed(2)}</Text>
+          <Button
+            title="Remove"
+            onPress={() => removeItem(item.id)}
+            color="#ff4d4d"
+          />
         </View>
       )}
     />
