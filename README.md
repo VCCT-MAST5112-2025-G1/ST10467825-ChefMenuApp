@@ -6,6 +6,7 @@ A menu application that allows users to view the current offerings of the chef.
 
 ST10467825
 
+st10467825@vcconnect.edu.za
 kgomotsombele@outlook.com
 
 Repository link: [(https://github.com/KgomotsoMbele/ST10467825-ChefMenuApp)]
@@ -119,3 +120,9 @@ Please run/test the app with a device of similar or same sizing.
 
 4. React Native Picker. 2023. React Native Picker Documentation. [online] Available at: https://reactnative.dev/docs/picker
    [Accessed 22 October 2025]
+
+5. React Navigation. 2023. React Navigation Documentation. [online] Available at: https://reactnavigation.org/docs/getting-started
+   [Accessed 22 October 2025].
+
+6. React. 2023. Context API – React Documentation. [online] Available at: https://react.dev/reference/react/useContext
+   [Accessed 22 October 2025].
