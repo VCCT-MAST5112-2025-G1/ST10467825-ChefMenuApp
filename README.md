@@ -12,7 +12,9 @@ Repository link: [(https://github.com/KgomotsoMbele/ST10467825-ChefMenuApp)]
 
 Module: MAST5112 — Mobile Application Scripting
 
-YouTube link: [Video](https://youtu.be/X03iqC-fkDg)
+Part 2 YouTube link: [Video](https://youtu.be/X03iqC-fkDg)
+
+Part 3 YouTube link: 
 
 ## Project Overview
 
@@ -72,6 +74,10 @@ Enhancing the customer experience by displaying the menu clearly, including dish
 
   Refactored the overall structure of the code for imporoved readability and maintainability. Added a centralised `MenuProvider` context to manage menu data globally across screens. Also `HomeScreen` was updated to consume global menu context to prepare the app for the next phase where menu management will move to the dedicated chef screen.
 
+- Version 1.7
+
+   Refactored menu handling to be global by introducing a centralised MenuProvider context and updated HomeScreen to consume this context. Implemented the fully controlled Home form (state, validation) with a FlatList to render menu items in real time and reset fields on submit. Added category counts (Starters, Mains, Desserts) using .filter() and a dropdown/picker to reduce input errors, plus a dynamic total price calculation that updates as items are added. Added dedicated screens for each job type, carried out minor UI adjustments for consistency, and resolved TypeScript/import issues to improve type safety and cross-platform imports.
+
 ## Installation and setup
 
 1. Clone this repository:
@@ -93,6 +99,12 @@ Enhancing the customer experience by displaying the menu clearly, including dish
    or for iOS
 
    `npx react-native run-iOS`
+
+## Device tested
+
+The device used to test and run the app was a Samsung A05s, an android with a resolution of 1080 x 2400 pixels at 6.7 inches. 
+Please run/test the app with a device of similar or same sizing.
+(Pixel Phone 6, 6a, 7, 7a, 8, 8a, and Medium Phone on Android studio)
 
 ## References
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, FlatList, StyleSheet } from "react-native";
 import { MenuItem } from "../types";
-import { Button } from "react-native-paper";
+import { Button } from "react-native";
 
 type MenuListProps = {
   items: MenuItem[];
@@ -30,6 +30,8 @@ export default function MenuList({ items, removeItem }: MenuListProps) {
           />
         </View>
       )}
+      scrollEnabled={false}
+      nestedScrollEnabled={false}//silencing a persistent scroll error by telling React to not scroll the FlatList inside the ScrollView
     />
   );
 }
