@@ -15,7 +15,7 @@ Module: MAST5112 — Mobile Application Scripting
 
 Part 2 YouTube link: [Video](https://youtu.be/X03iqC-fkDg)
 
-Part 3 YouTube link: 
+Part 3 YouTube link: [Video](https://youtu.be/reX68MXf1Xk)
 
 ## Project Overview
 
